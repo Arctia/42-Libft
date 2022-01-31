@@ -54,7 +54,7 @@ HDRS = libft.h
 FLAGS = -Wall -Wextra -Werror 
 
 $(NAME):
-		gcc -c $(FLAGS) -I $(HDRS) $(SRCS) -lm 
+		gcc -c $(FLAGS) -I $(HDRS) $(SRCS)
 		ar rc $(NAME) $(OBJS)
 		ranlib $(NAME)
 

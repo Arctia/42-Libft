@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/30 16:02:29 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/01/30 16:02:33 by vgavioli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
@@ -7,16 +18,16 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
-int		ft_isalnumm(int ch);
+int		ft_isalnum(int ch);
 int		ft_isalpha(int ch);
 int		ft_isascii(int ch);
-int		ft_isdifit(int ch);
+int		ft_isdigit(int ch);
 int		ft_isprint(int ch);
 int		ft_tolower(int ch);
 int		ft_toupper(int ch);

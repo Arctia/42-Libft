@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/30 15:48:28 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/01/30 15:48:32 by vgavioli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int	calc_digits(int	n)
+int	calc_digits(int n)
 {
 	int	digits;
 
 	digits = 1;
-	while ((n/10) > 0)
+	while ((n / 10) > 0)
 	{
 		n = n / 10;
 		digits++;
@@ -36,7 +47,7 @@ char	*ft_itoa(int n)
 
 	sign = calc_sign(&n);
 	digits = calc_digits(n) + sign;
-	str = (char*) malloc(sizeof(char) * (digits + 1));
+	str = (char *) malloc(sizeof(char) * (digits + 1));
 	if (!str)
 		return (NULL);
 	if (sign == 1)

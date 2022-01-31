@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/30 15:52:46 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/01/30 15:52:50 by vgavioli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -29,12 +40,15 @@ char	*malloc_segment(const char *s, char c)
 	i = 0;
 	while (s[i] && s[i] != c)
 		i += 1;
-	segment = (char*) malloc(sizeof(char) * (i + 1));
+	segment = (char *) malloc(sizeof(char) * (i + 1));
 	if (!segment)
 		return (NULL);
-	j = -1;
-	while (j++ < i)
+	j = 0;
+	while (j < i)
+	{
 		segment[j] = s[j];
+		j++;
+	}
 	segment[j] = 0;
 	return (segment);
 }
@@ -48,7 +62,7 @@ char	**ft_split(const char *s, char c)
 	if (!s)
 		return (NULL);
 	segments = segments_finder(s, c);
-	arr = (char**) malloc(sizeof(char*) * (segments + 1));
+	arr = (char **) malloc(sizeof(char *) * (segments + 1));
 	if (!arr)
 		return (NULL);
 	i = 0;

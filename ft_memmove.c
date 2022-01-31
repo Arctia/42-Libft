@@ -23,7 +23,7 @@ void	*ft_memmove(void *des, const void *src, size_t len)
 		i = (int)len - 1;
 		while (i >= 0)
 		{
-			*(char*)(des + i) = *(char*)(src + i);
+			*(char *)(des + i) = *(char *)(src + i);
 			i--;
 		}
 	}
@@ -32,7 +32,7 @@ void	*ft_memmove(void *des, const void *src, size_t len)
 		i = 0;
 		while (i < (int)len)
 		{
-			*(char*)(des + i) = *(char*)(src + i);
+			*(char *)(des + i) = *(char *)(src + i);
 			i++;
 		}
 	}
