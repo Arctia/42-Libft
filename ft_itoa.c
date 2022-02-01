@@ -54,6 +54,7 @@ char	*ft_itoa(int n)
 	int		sign;
 	int		i;
 
+	str = 0;
 	if (n == -2147483648)
 		return (return_min_int(str));
 	sign = calc_sign(&n);

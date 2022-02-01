@@ -51,7 +51,7 @@ OBJSBONUS = $(BONUS:.c=.o)
 
 HDRS = libft.h
 
-FLAGS = -Wall -Wextra -Werror 
+FLAGS = -Wall -Wextra -Werror
 
 $(NAME):
 		gcc -c $(FLAGS) -I $(HDRS) $(SRCS)
