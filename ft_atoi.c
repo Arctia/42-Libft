@@ -17,7 +17,7 @@ int	check_spaces(const char *s)
 	int	i;
 
 	i = 0;
-	while ((s[i] >= 9 && s[i] <= 11) || s[i] == ' ')
+	while ((s[i] >= 9 && s[i] <= 13) || s[i] == ' ')
 		i++;
 	return (i);
 }

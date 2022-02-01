@@ -21,11 +21,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		return ((char *)(s1));
 	i = 0;
 	j = ft_strlen(s2);
-	while (i < n)
+	while (i + j <= n)
 	{
 		if (ft_strncmp((const char *)(s1 + i), s2, j) == 0)
 			return ((char *)(s1 + i));
 		i++;
 	}
-	return ((char *)(s1));
+	return (NULL);
 }

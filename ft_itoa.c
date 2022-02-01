@@ -38,6 +38,15 @@ int	calc_sign(int *n)
 	return (sign);
 }
 
+char	*return_min_int(char *str)
+{
+	str = (char *) malloc(sizeof(char) * (12));
+	if (!str)
+		return (NULL);
+	str = "-2147483648\0";
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -45,6 +54,8 @@ char	*ft_itoa(int n)
 	int		sign;
 	int		i;
 
+	if (n == -2147483648)
+		return (return_min_int(str));
 	sign = calc_sign(&n);
 	digits = calc_digits(n) + sign;
 	str = (char *) malloc(sizeof(char) * (digits + 1));
