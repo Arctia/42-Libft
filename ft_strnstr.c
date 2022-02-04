@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:57:17 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/01/30 15:57:21 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:48:52 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	size_t	i;
 	size_t	j;
 
-	if (!s1 || !s2)
-		return ((char *)(s1));
 	i = 0;
 	j = ft_strlen(s2);
+	if (!s2[0] || !s1[0])
+	{
+		if (ft_strncmp((const char *)(s1 + i), s2, j) == 0)
+			return ((char *)(s1 + i));
+	}
 	while (i + j <= n)
 	{
 		if (ft_strncmp((const char *)(s1 + i), s2, j) == 0)

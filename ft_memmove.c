@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:55:03 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/01/26 15:55:09 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/02/04 15:52:46 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *des, const void *src, size_t len)
 {
 	int	i;
 
-	if (!des || !src)
+	if (!des && !src)
 		return (NULL);
 	if (des > src)
 	{
