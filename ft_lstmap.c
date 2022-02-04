@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/04 13:00:47 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/02/04 13:15:19 by vgavioli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -7,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_el;
 
 	new_lst = NULL;
-	while (lst);
+	while (lst)
 	{
 		new_el = ft_lstnew(f(lst->content));
 		if (!new_el)

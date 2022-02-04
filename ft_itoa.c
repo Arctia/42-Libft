@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:48:28 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/01/30 15:48:32 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/02/04 14:40:01 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,6 @@ int	calc_sign(int *n)
 	return (sign);
 }
 
-char	*return_min_int(char *str)
-{
-	str = (char *) malloc(sizeof(char) * (12));
-	if (!str)
-		return (NULL);
-	str = "-2147483648\0";
-	return (str);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -56,7 +47,7 @@ char	*ft_itoa(int n)
 
 	str = 0;
 	if (n == -2147483648)
-		return (return_min_int(str));
+		return (ft_strdup("-2147483648\0"));
 	sign = calc_sign(&n);
 	digits = calc_digits(n) + sign;
 	str = (char *) malloc(sizeof(char) * (digits + 1));
@@ -71,6 +62,6 @@ char	*ft_itoa(int n)
 		n /= 10;
 		i--;
 	}
-	str[digits + 1] = '\0';
+	str[digits] = '\0';
 	return (str);
 }
