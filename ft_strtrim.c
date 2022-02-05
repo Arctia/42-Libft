@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:58:31 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/01/30 15:58:35 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/02/05 12:07:51 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	i;
 
 	s = 0;
+	if (!s1)
+		return (NULL);
 	while (s1[s] && removable(set, s1[s]))
 		s++;
 	e = ft_strlen(s1);

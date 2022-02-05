@@ -3,3 +3,4 @@ todo
 a.out
 *.gch
 *.o
+*.a

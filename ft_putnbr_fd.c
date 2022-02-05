@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgavioli <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:52:15 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/01/30 15:52:19 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/02/05 12:09:10 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 	char	*str;
 
 	if (n == -2147483648)
-	{
 		write(fd, "-2147483648", 11);
-		return ;
-	}
 	else
 	{
 		str = ft_itoa(n);
