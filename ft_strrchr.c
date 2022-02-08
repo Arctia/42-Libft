@@ -6,7 +6,7 @@
 /*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:57:44 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/02/04 15:53:47 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/02/08 11:06:10 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	i = ft_strlen(s);
 	while (i > 0)
 	{
-		if (s[i] == c)
+		if ((unsigned char)s[i] == (unsigned char)(c))
 			return ((char *)(s + i));
 		i--;
 	}
-	if (s[0] == c)
+	if ((unsigned char)s[0] == (unsigned char)(c))
 		return ((char *)(s + i));
 	return (NULL);
 }

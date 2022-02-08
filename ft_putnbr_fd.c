@@ -6,7 +6,7 @@
 /*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 15:52:15 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/02/05 12:44:55 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/02/08 14:12:15 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,23 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
 	else
 	{
-		str = ft_itoa(n);
-		ft_putstr_fd(str, fd);
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n *= -1;
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+			ft_putnbr_fd(n % 10, fd);
+		}
+		else
+		{
+			ft_putchar_fd(n + '0', fd);
+		}
 	}
 }
