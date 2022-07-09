@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_free_cmatrix.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arctia <arctia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:49:56 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/07/08 17:53:46 by arctia           ###   ########.fr       */
+/*   Created: 2022/06/27 20:02:14 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/06/27 20:06:35 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_free_cmatrix(char **mtx)
 {
 	int	i;
 
 	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
+	while (mtx[i])
+		free(mtx[i++]);
+	free(mtx);
+}
+
+void	ft_free_imatrix(int **mtx)
+{
+	int	i;
+
+	i = 0;
+	while (mtx[i])
+		free(mtx[i++]);
+	free(mtx);
 }

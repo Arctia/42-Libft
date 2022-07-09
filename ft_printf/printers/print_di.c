@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   print_di.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:56:10 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/06/16 17:12:01 by vgavioli         ###   ########.fr       */
+/*   Created: 2022/06/14 16:27:59 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/06/14 17:32:20 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./../ft_printf.h"
 
-// Compare two strings from the start to n size
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	if (s1[0] == '\0')
-		return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
-	while (i < n && (s1[i] || s2[i]))
+void	print_i(int i, t_pflags *tf)
+{	
+	if (tf->plus == 1 && i > -1)
+		pf_putchar_fd('+', 1, tf);
+	else if (i < 0)
+		pf_putchar_fd('-', 1, tf);
+	if (tf->space == 1 && i > -1)
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
-		i++;
+		pf_putchar_fd(' ', 1, tf);
+		print_0s(i, tf, ' ');
 	}
-	return (0);
+	if (tf->zero || tf->point)
+		print_0s(i, tf, '0');
+	pf_putnbr_fd(i, 1, tf);
+	if (tf->minus == 1)
+		print_0s(i, tf, ' ');
 }

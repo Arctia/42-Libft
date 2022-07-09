@@ -1,77 +1,37 @@
+NAME 		= libft
 
-NAME = libft.a
+BUFFER 		= 42
+BSIZE 		= -D BUFFER_SIZE=$(BUFFER)
+CC 			= gcc
+FLAGS 		= -Wall -Wextra -Werror
 
-SRCS = ft_atoi.c \
-ft_bzero.c \
-ft_calloc.c \
-ft_isalnum.c \
-ft_isalpha.c \
-ft_isascii.c \
-ft_isdigit.c \
-ft_isprint.c \
-ft_memchr.c \
-ft_memcmp.c \
-ft_memcpy.c \
-ft_memmove.c \
-ft_memset.c \
-ft_split.c \
-ft_strchr.c \
-ft_strdup.c \
-ft_strjoin.c \
-ft_strlcat.c \
-ft_strlcpy.c \
-ft_strlen.c \
-ft_strncmp.c \
-ft_strnstr.c \
-ft_strrchr.c \
-ft_strtrim.c \
-ft_substr.c \
-ft_tolower.c \
-ft_toupper.c \
-ft_strmapi.c \
-ft_itoa.c \
-ft_striteri.c \
-ft_putchar_fd.c \
-ft_putstr_fd.c \
-ft_putendl_fd.c \
-ft_putnbr_fd.c 
+SUBDIRS 	= ft_printf ft_printf/printers get_next_line
+DIR_OBJ 	= ./obj
 
-BONUS = ft_lstadd_back.c \
-ft_lstadd_front.c \
-ft_lstclear.c \
-ft_lstdelone.c \
-ft_lstiter.c \
-ft_lstlast.c \
-ft_lstnew.c \
-ft_lstsize.c \
-ft_lstmap.c
+INCS 		= $(wildcard *.h $(foreach fd, $(SUBDIRS), $(fd)/*.h))
+SRCS 		= $(wildcard *.c $(foreach fd, $(SUBDIRS), $(fd)/*.c))
+OBJS 		= $(addprefix $(DIR_OBJ)/, $(SRCS:c=o))
+INC_DIRS 	= -I./ $(addprefix -I, $(SUBDIRS))
 
-OBJS = $(SRCS:.c=.o)
+LIBS 		= $(LIBFT) $(PRN)
 
-OBJSBONUS = $(BONUS:.c=.o)
+$(NAME): $(OBJS) $(INCS)
+	ar rcs $(NAME).a $(OBJS)
 
-HDRS = libft.h
+$(DIR_OBJ)/%.o: %.c $(INCS)
+	mkdir -p $(@D)
+	$(CC) $(BSIZE) -o $@ $(FLAGS) -c $< $(INC_DIRS)
 
-FLAGS = -Wall -Wextra -Werror
-
-$(NAME):
-		gcc -c $(FLAGS) -I $(HDRS) $(SRCS)
-		ar rc $(NAME) $(OBJS)
-		ranlib $(NAME)
-
-all:	$(NAME)
-
-bonus:
-		gcc -c $(FLAGS) -I $(HDRS) $(SRCS) $(BONUS)
-		ar rc $(NAME) $(OBJS) $(OBJSBONUS)
-		ranlib $(NAME)
+all: $(NAME)
 
 clean:
-		rm -f $(OBJS) $(OBJSBONUS)
+	rm -rf obj
 
-fclean:     clean
-		rm -f $(NAME)
+aclean:
+	rm -rf $(NAME).a
 
-re:		fclean all
+fclean: clean aclean
 
-.PHONY:	all clean fclean re
+bonus: all
+
+re: fclean all

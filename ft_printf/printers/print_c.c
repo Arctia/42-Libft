@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   print_c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arctia <arctia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:49:56 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/07/08 17:53:46 by arctia           ###   ########.fr       */
+/*   Created: 2022/06/14 16:27:59 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/06/14 17:32:20 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "./../ft_printf.h"
 
-int	ft_lstsize(t_list *lst)
+void	print_c(char ch, t_pflags *tf)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
+	len = (tf->length - 1);
+	print_spaces_before(len, tf);
+	write(1, &ch, 1);
+	tf->dimension++;
+	print_spaces_after(len, tf);
 }

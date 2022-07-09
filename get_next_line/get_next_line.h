@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:56:10 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/06/16 17:12:01 by vgavioli         ###   ########.fr       */
+/*   Created: 2022/02/14 11:05:14 by vgavioli          #+#    #+#             */
+/*   Updated: 2022/06/20 15:05:56 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
 
-// Compare two strings from the start to n size
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
+# define GET_NEXT_LINE_H
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	if (s1[0] == '\0')
-		return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
-	while (i < n && (s1[i] || s2[i]))
-	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
-		i++;
-	}
-	return (0);
-}
+# include <unistd.h>
+# include <stdlib.h>
+
+char	*get_next_line(int fd);
+int		line_len_n(char *str);
+size_t	gnl_strlen(char *str);
+char	*free_buffer(char *buffer);
+char	*gnl_strjoin(char *s1, char *s2);
+char	*gnl_strchr(char *s, int c);
+
+#endif

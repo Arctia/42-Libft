@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arctia <arctia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/30 16:02:29 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/02/05 12:28:25 by vgavioli         ###   ########.fr       */
+/*   Updated: 2022/07/08 18:04:35 by arctia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "./ft_printf/ft_printf.h"
+# include "./get_next_line/get_next_line.h"
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 
 int		ft_isalnum(int ch);
@@ -32,6 +35,9 @@ int		ft_toupper(int ch);
 int		ft_atoi(const char *str);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strrncmp(const char *s1, const char *s2, int n);
+
+long	ft_atol(const char *str);
 
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
@@ -39,6 +45,7 @@ char	*ft_strdup(const char *s);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoin_free(char *s1, char *s2, int f1, int f2);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
@@ -55,6 +62,8 @@ void	*ft_memcpy(void *des, const void *src, size_t n);
 void	*ft_memmove(void *des, const void *src, size_t len);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	ft_free_cmatrix(char **mtx);
+void	ft_free_imatrix(int **mtx);
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
