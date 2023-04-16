@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arctia <arctia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 13:45:32 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/07/01 21:57:20 by arctia           ###   ########.fr       */
+/*   Created: 2023/03/22 23:05:56 by vgavioli          #+#    #+#             */
+/*   Updated: 2023/03/23 10:47:06 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ typedef struct s_pflags
 	char	type;
 }				t_pflags;
 
+int		ft_printfd(const char *str, ...);
 int		ft_printf(const char *str, ...);
+int		pfnd(const char *str, ...);
 int		pfn(const char *str, ...);
 
 // flag_utils.c
@@ -68,6 +70,7 @@ void	print_x(long int val, t_pflags *tf);
 void	print_p(void *pointer, t_pflags *tf);
 void	print_u(long int val, t_pflags *tf);
 void	print_t(t_pflags *tf);
+void	print_y(t_pflags *tf);
 void	print_0s(int num, t_pflags *tf, char ch);
 void	print_n0s(int n, char ch, t_pflags *tf);
 void	print_hex_ptr(char *res, t_pflags *tf);

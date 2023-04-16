@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/30 15:48:28 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/06/25 16:04:12 by vgavioli         ###   ########.fr       */
+/*   Created: 2023/03/22 23:10:04 by vgavioli          #+#    #+#             */
+/*   Updated: 2023/03/23 10:47:13 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,5 @@ char	*ft_itoa(int n)
 		i--;
 	}
 	str[digits] = '\0';
-	free(str);
 	return (str);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   base.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arctia <arctia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 14:18:48 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/07/01 21:24:04 by arctia           ###   ########.fr       */
+/*   Created: 2023/03/22 23:05:43 by vgavioli          #+#    #+#             */
+/*   Updated: 2023/03/23 10:47:08 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 int	found_terminator(char ch)
 {
 	if (ch == 'c' || ch == 's' || ch == 'p' || ch == 'd' || ch == 't'
-		|| ch == '%' || ch == 'i' || ch == 'u' || ch == 'x' || ch == 'X')
+		|| ch == '%' || ch == 'i' || ch == 'u' || ch == 'x' || ch == 'X'
+		|| ch == 'y')
 		return (1);
 	return (0);
 }

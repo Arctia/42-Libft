@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_t.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arctia <arctia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 21:41:12 by arctia            #+#    #+#             */
-/*   Updated: 2022/07/01 21:51:36 by arctia           ###   ########.fr       */
+/*   Created: 2023/03/22 23:25:40 by vgavioli          #+#    #+#             */
+/*   Updated: 2023/03/23 10:47:05 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_t(t_pflags *tf)
 {	
-	char *code;
+	char	*code;
 
 	code = INF;
 	if (tf->length != 0)

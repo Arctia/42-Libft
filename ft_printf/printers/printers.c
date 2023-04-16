@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arctia <arctia@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vgavioli <vgavioli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/06 14:28:21 by vgavioli          #+#    #+#             */
-/*   Updated: 2022/07/01 21:42:43 by arctia           ###   ########.fr       */
+/*   Created: 2023/03/22 23:24:10 by vgavioli          #+#    #+#             */
+/*   Updated: 2023/03/23 10:46:58 by vgavioli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	print_element(t_pflags *tf, va_list valist)
 		print_u(va_arg(valist, unsigned int), tf);
 	else if (tf->type == 't')
 		print_t(tf);
+	else if (tf->type == 'y')
+		print_y(tf);
 	else if (tf->type == '%')
 		pf_putchar_fd('%', 1, tf);
 }
